@@ -24,5 +24,82 @@
     NOTA: Para imprimir los datos de mascota o usuario, debe llamar a una función definida en la clase Mascota/Usuario, según corresponda. 
 */
 
+    class Usuario 
+    {
+        constructor(nombre, apellido, id)
+        {
+            this.nombre=nombre;
+            this.apellido=apellido;
+            this.id=id;
+        }
+        imprimir()
+        {
+            console.log("USUARIO:")
+            console.log(this.nombre);
+            console.log(this.apellido);
+            console.log(this.id);
+        }
+    }
+
+    class Mascota 
+    {
+        constructor(nombre, tipo, edad, vacunas, responable)
+        {
+            this.nombre=nombre;
+            this.tipo=tipo;
+            this.edad=edad;
+            this.vacunas=vacunas;
+            this.responable=responable;
+        }
+        imprimir()
+        {
+            console.log("MASCOTA:")
+            console.log(this.tipo);
+            console.log(this.nombre);
+            this.responable.imprimir();
+            console.log(this.vacunas);
+            console.log(this.edad);
+        }
+    }
+
+
+//
+let op="";
+while(op!=="FIN")
+{
+    op=prompt(`INGRESE UNA OPCION
+              1. AGREGAR MASCOTA
+              2. FIN`);
+    if(op==="1")
+    {
+        let mascota = agregarMascota();
+        mascota.imprimir();
+    }
+    else{
+        alert("GRACIAS POR VENIR");
+    }
+
+}
+
+function agregarMascota()
+{
+    let nombreMascota = prompt("Ingrese el nombre de la mascota");
+    let edadMascota=prompt("Ingrese la edad de la mascota");
+    let tipo=prompt("Ingrese el tipo: PERRO/GATO");
+    let vacunas=prompt("tiene vacunas?");
+    let responsable = asignarResponsable();
+
+    return new Mascota(nombreMascota,tipo,edadMascota,vacunas,responsable);
+
+}
+
+function asignarResponsable()
+{
+    let nombreResponable = prompt("Nombre Responsable:");
+    let apellidoResponable = prompt("Apellido Responsable:");
+    let idResponable = prompt("Id Respnsable:");
+
+    return new Usuario(nombreResponable,apellidoResponable,idResponable);
+}
 
 </script>

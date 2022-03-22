@@ -1,0 +1,25 @@
+<script>
+
+    function Producto(nombre, precio, promocion, peso)
+        {
+            this.nombre=nombre;
+            this.precio=precio;
+            this.promocion=promocion;
+            this.weight=peso;
+            this.iva = 0;
+            this.calcularIva = (impuesto)=>{ this.iva=precio*impuesto}
+            this.calcularDescuento = (descuento) => {this.precio=this.precio-descuento}
+            this.mostrarPromo = () => {alert(promocion)}
+        
+        }
+    
+        const cerveza = new Producto("Cerveza", 200, false, 15);
+        
+        for(propiedad in cerveza)
+        {
+            console.log(cerveza[propiedad]);
+        }
+
+        console.log(cerveza["nombre"]); // === cerveza.nombre
+    
+    </script>
