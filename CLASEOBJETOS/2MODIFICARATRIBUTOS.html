@@ -1,18 +1,23 @@
 <script>
 
-    const user = {
-        id:0,
-        nombre: "Juan", 
-        apellido: "Perez", 
-        categoria: "cliente",
+    const categoria = {
+        nombre: "Desayuno",
+        descripcion: "Texto cualquiera",
     }
 
+    categoria.nombre = "BEBIDAS";
+    console.log(categoria);
 
-    function cambiarNombre(obj)
+    function cambiarNombre(obj, nuevoNombre)
     {
-
+        obj.nombre=nuevoNombre;
     }
 
+    cambiarNombre(categoria, getNombre());
+    console.log(categoria);
 
-
+    function getNombre()
+    {
+        return prompt("INGRESE EL NOMBRE");
+    }
 </script>

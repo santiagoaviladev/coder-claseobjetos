@@ -2,6 +2,26 @@
 
     
 
+    function Producto(nombre, precio, promocion, peso)
+    {
+        this.nombre=nombre;
+        this.precio=precio;
+        this.promocion=promocion;
+        this.weight=peso;
+        
+    }
+
+    const cerveza = new Producto("Cerveza", 200, false, 15);
+    const leche = new Producto("Leche", 2000, true, 20);
+    const panales = new Producto("Pañales", 1000, false, 20);
+    const cerveza2 = new Producto("Cerveza", 200, false);
+   
+    console.log(cerveza);
+    console.log(leche);
+    console.log(panales);
+    console.log(cerveza2);
+
+
 
 
 </script>
